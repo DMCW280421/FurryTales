@@ -1,0 +1,115 @@
+Tables
+1)Admin
+-- create table Admin(adminID integer primary key auto_increment, name varchar(100), phone varchar(13), email varchar(50), password varchar(100), address varchar(100), isActive int(1) default 1, createdTimeStamp timestamp default CURRENT_TIMESTAMP);
+
+2)Customer
+-- create table Customer(customerID integer primary key auto_increment, name varchar(100), phone varchar(50), email varchar(50), password varchar(100), address varchar(1000), isActive int(1) default 1, createdTimestamp  timestamp default CURRENT_TIMESTAMP);
+
+3)Product
+-- CREATE TABLE product (
+    productID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100),
+    description VARCHAR(10000),
+    image VARCHAR(100),
+    mrp FLOAT,
+    discount FLOAT,
+    category VARCHAR(100),
+    company VARCHAR(100),
+    adminId INTEGER,
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (adminId) REFERENCES Admin(adminID)
+);
+
+
+4)Cart
+-- CREATE TABLE cart (
+    cartID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    customerId INTEGER,
+    productId INTEGER,
+    quantity INT,
+    mrp FLOAT,
+    discountedPrice FLOAT,
+    total FLOAT,
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customerId) REFERENCES Customer(customerID),
+    FOREIGN KEY (productId) REFERENCES product(productID)
+);
+
+
+5)Order
+-- CREATE TABLE orders (
+    orderID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    productId INTEGER,
+    quantity INT,
+    mrp FLOAT,
+    price FLOAT,
+    total FLOAT,
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (productId) REFERENCES product(productID)
+);
+
+
+6)OrderDetails
+-- CREATE TABLE orderDetails (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    customerId INTEGER,
+    total FLOAT,
+    status INTEGER DEFAULT 0,
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customerId) REFERENCES Customer(customerID)
+);
+
+
+7)Review
+-- CREATE TABLE review (
+    reviewID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    productId INTEGER,
+    customerId INTEGER,
+    review VARCHAR(1000),
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (productId) REFERENCES product(productID),
+    FOREIGN KEY (customerId) REFERENCES Customer(customerID)
+);
+
+8)PaymentDetails
+-- CREATE TABLE paymentDetails (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    customerId INTEGER,
+    orderID INTEGER,
+    accountNo VARCHAR(50),
+    bankName VARCHAR(50),
+    createdTimestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customerId) REFERENCES Customer(customerID),
+    FOREIGN KEY (orderID) REFERENCES orders(orderID)
+);
+
+
+9)Delivery Details
+-- CREATE TABLE deliveryDetails (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    customerName VARCHAR(50),
+    customerAddress VARCHAR(1000),
+    phoneNo VARCHAR(13)
+);
+
+
+
+
+
+Packages
+npm i express
+npm i cors
+npm i crypto-js
+npm i jsonwebtoken
+npm i morgan
+npm i multer
+npm i mysql2
+npm i nodemon
+
+
+
+
+
+
+alter table orders add column ID Integer;
+
