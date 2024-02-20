@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cart_fragment"
+    tools:context="fragments.CartFragment">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Go to Checkout"
+        android:id="@+id/btnCheckout"
+        />
+
+    <TextView
+        android:id="@+id/totalAmountView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="130dp"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/recyclerView"/>
+
+
+
+</FrameLayout>

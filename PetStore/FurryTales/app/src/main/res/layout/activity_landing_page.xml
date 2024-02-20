@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_marginTop="20dp"
+    tools:context=".activity.LandingPageActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to FurryTales"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/square_bg"
+        android:padding="4dp">
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search products..." />
+
+    </LinearLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btnProduct"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:drawableStart="@drawable/product_list"
+            android:onClick="products"
+            android:text="Products"
+            android:layout_marginLeft="15dp"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:text="Cart"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/furrylogo"
+            android:onClick="cart"
+            android:padding="8dp" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:drawableStart="@drawable/cart"
+            android:onClick="reviews"
+            android:text="Reviews"
+            android:layout_marginLeft="15dp"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/btnReviews"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/furrylogo"
+            android:onClick="profile"
+            android:text="Profile"
+            android:padding="8dp" />
+    </LinearLayout>
+
+</LinearLayout>
+

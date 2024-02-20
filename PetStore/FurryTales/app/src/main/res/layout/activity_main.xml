@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="15dp"
+    tools:context=".activity.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:src="@drawable/furrylogo"
+        android:transitionName="logo_image"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="FurryTales"
+        android:textAlignment="center"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:transitionName="logo_text"
+        android:textColor="@color/black"
+        android:id="@+id/textName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="One Pet Stop For All Your Needs"
+        android:layout_marginTop="8dp"
+        android:id="@+id/textSlogan"/>
+
+</LinearLayout>
